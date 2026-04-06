@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="raveresturant.client/raveresturant.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="RaveResturant.Server/RaveResturant.Server.csproj" />
+</Solution>
