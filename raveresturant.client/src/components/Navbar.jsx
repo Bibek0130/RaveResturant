@@ -1,90 +1,66 @@
-import { React, useState } from "react";
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { useState, useEffect } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { NAV_LINKS } from "../constants/data";
 
-const Navigation = ({ scrolled, menuOpen, setMenuOpen, activeSection, scrollTo, NAV_LINKS }) => {
-    const scroll = scrolled;
+export default function Navbar() {
+    const [scrolled, setScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const onScroll = () => setScrolled(window.scrollY > 60);
+        window.addEventListener("scroll", onScroll);
+        return () => window.removeEventListener("scroll", onScroll);
+    }, []);
+
+    const handleNav = (path) => {
+        navigate(path);
+        setMenuOpen(false);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     return (
-        <Navbar
-            fixed="top"
-            expand="lg"
-            expanded={menuOpen}
-            onToggle={(expanded) => setMenuOpen(expanded)}
+        <nav
             style={{
-                padding: scroll ? "16px 0" : "28px 0",
-                background: scroll ? "rgba(12,10,8,0.97)" : "transparent",
-                borderBottom: scroll ? "1px solid rgba(201,168,76,0.15)" : "none",
+                position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
+                padding: scrolled ? "16px 5%" : "28px 5%",
+                background: scrolled ? "rgba(12,10,8,0.97)" : "transparent",
+                borderBottom: scrolled ? "1px solid rgba(201,168,76,0.15)" : "none",
+                display: "flex", alignItems: "center", justifyContent: "space-between",
                 transition: "all 0.4s ease",
-                backdropFilter: scroll ? "blur(12px)" : "none",
+                backdropFilter: scrolled ? "blur(12px)" : "none",
             }}
         >
-            <Container fluid style={{ padding: "0 5%" }}>
-                {/* Brand Section */}
-                <Navbar.Brand
-                    className="p-0"
-                    style={{ cursor: "pointer" }}
-                    onClick={() => scrollTo("Home")}
-                >
-                    <div style={{
-                        fontFamily: "'Cormorant Garamond', serif",
-                        fontWeight: 300,
-                        fontSize: "1.6rem",
-                        letterSpacing: "0.12em",
-                        color: "#f0ebe3"
-                    }}>
-                        RAVE
-                    </div>
-                    <div style={{
-                        fontFamily: "'Montserrat', sans-serif",
-                        fontSize: "0.55rem",
-                        letterSpacing: "0.4em",
-                        color: "#c9a84c",
-                        textTransform: "uppercase",
-                        marginTop: "-2px"
-                    }}>
-                        Restaurant
-                    </div>
-                </Navbar.Brand>
+            {/* Logo */}
+            <div style={{ cursor: "pointer" }} onClick={() => handleNav("/")}>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "1.6rem", letterSpacing: "0.12em", color: "#f0ebe3" }}>
+                    RAVE
+                </div>
+                <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.55rem", letterSpacing: "0.4em", color: "#c9a84c", textTransform: "uppercase", marginTop: "-2px" }}>
+                    Restaurant
+                </div>
+            </div>
 
-                {/* Hamburger Toggle */}
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            {/* Desktop nav */}
+            <div className={`nav-links${menuOpen ? " open" : ""}`} style={{ display: "flex", gap: "32px", alignItems: "center" }}>
+                {NAV_LINKS.map(({ label, path }) => (
+                    <NavLink
+                        key={label}
+                        to={path}
+                        className={({ isActive }) => `nav-link${isActive ? " active" : ""}`}
+                        onClick={() => { setMenuOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }); }}
+                    >
+                        {label}
+                    </NavLink>
+                ))}
+            </div>
 
-                {/* Collapsible Links */}
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="ms-auto" style={{ gap: "20px" }}>
-                        {NAV_LINKS.map((link) => (
-                            <Nav.Link
-                                key={link}
-                                className={`nav-link ${activeSection === link ? "active" : ""}`}
-                                onClick={() => {
-                                    scrollTo(link);
-                                    setMenuOpen(false); // Closes menu on click for mobile
-                                }}
-                                style={{
-                                    color: activeSection === link ? "#c9a84c" : "#f0ebe3",
-                                    fontFamily: "'Montserrat', sans-serif",
-                                    fontSize: "0.85rem",
-                                    letterSpacing: "0.1em",
-                                    textTransform: "uppercase"
-                                }}
-                            >
-                                {link}
-                            </Nav.Link>
-                        ))}
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-        </Navbar>
+            {/* Hamburger */}
+            <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+                <span style={{ transform: menuOpen ? "rotate(45deg) translate(4px, 4px)" : "none" }} />
+                <span style={{ opacity: menuOpen ? 0 : 1 }} />
+                <span style={{ transform: menuOpen ? "rotate(-45deg) translate(4px, -4px)" : "none" }} />
+            </div>
+        </nav>
     );
-};
-
-export default Navigation;
-
-const navbarStyle = {
-    position: "fixed", top: 0, left: 0, right: 0, zIndex: 100,
-    padding: scrolled ? "16px 5%" : "28px 5%",
-    background: scrolled ? "rgba(12,10,8,0.97)" : "transparent",
-    borderBottom: scrolled ? "1px solid rgba(201,168,76,0.15)" : "none",
-    display: "flex", alignItems: "center", justifyContent: "space-between",
-    transition: "all 0.4s ease",
-    backdropFilter: scrolled ? "blur(12px)" : "none",
 }
