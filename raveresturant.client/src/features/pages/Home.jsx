@@ -35,11 +35,11 @@ export default function Home() {
                 <div style={{ position: "absolute", left: "5%", top: "20%", width: "1px", height: "200px", background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.3), transparent)" }} />
                 <div style={{ position: "absolute", right: "5%", bottom: "20%", width: "1px", height: "150px", background: "linear-gradient(to bottom, transparent, rgba(201,168,76,0.2), transparent)" }} />
 
-                {/* Hero copy */}
+                {/*Main Body*/}
                 <div style={{ position: "relative", textAlign: "center", padding: "0 20px", maxWidth: "800px" }}>
-                    <div className="section-label" style={{ marginBottom: "20px" }}>Fine Dining · Kathmandu</div>
+                    <div className="section-label" style={{ marginBottom: "20px" }}>Family Restaurant · Kathmandu</div>
                     <h1 className="hero-title" style={{ fontSize: "clamp(4rem, 10vw, 9rem)", fontWeight: 300, lineHeight: 0.9, letterSpacing: "0.04em", color: "#f0ebe3", fontStyle: "italic" }}>
-                        Rave
+                        Rads
                     </h1>
                     <p className="hero-sub" style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: "clamp(0.7rem, 1.5vw, 0.85rem)", letterSpacing: "0.3em", textTransform: "uppercase", color: "#8a7a68", margin: "24px 0 48px" }}>
                         Where every plate tells a story
@@ -61,13 +61,13 @@ export default function Home() {
             <section style={{ padding: "100px 5%", borderTop: "1px solid rgba(201,168,76,0.1)" }}>
                 <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
                     <FadeIn>
-                        <div className="section-label">Est. 2018</div>
+                        <div className="section-label">Est. 2020</div>
                         <div className="divider" style={{ margin: "0 auto 32px" }} />
                         <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 300, fontStyle: "italic", color: "#f0ebe3", marginBottom: "24px", lineHeight: 1.2 }}>
                             Born from a passion for craft
                         </h2>
                         <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: "0.85rem", lineHeight: 1.9, color: "#8a7a68", marginBottom: "40px" }}>
-                            Rave was founded with a singular vision — to create a space where culinary artistry meets warm Nepali hospitality. Every dish is a celebration of technique, tradition, and creativity.
+                            Rads was founded with a singular vision — to create a space where food meets warm Nepali hospitality. Every dish is a celebration of technique, tradition, and creativity.
                         </p>
                         <button className="btn-gold" onClick={() => go("/our-story")}>Our Story</button>
                     </FadeIn>
@@ -88,14 +88,14 @@ export default function Home() {
                 </div>
             </FadeIn>
 
-            {/* ── MENU PREVIEW CTA ── */}
+            {/*MENU PREVIEW*/}
             <section style={{ padding: "100px 5%" }}>
                 <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "60px", alignItems: "center" }}>
                     <FadeIn>
                         <div className="section-label">The Menu</div>
                         <div className="divider" style={{ marginBottom: "28px" }} />
                         <h2 style={{ fontSize: "clamp(2rem, 4vw, 3rem)", fontWeight: 300, fontStyle: "italic", color: "#f0ebe3", marginBottom: "20px", lineHeight: 1.2 }}>
-                            Crafted with intention
+                           Serve you better
                         </h2>
                         <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: "0.85rem", lineHeight: 1.9, color: "#8a7a68", marginBottom: "36px" }}>
                             From delicate starters to showstopping mains and indulgent desserts — each plate is a carefully composed experience.

@@ -3,7 +3,7 @@ import { FadeIn } from "../../components/FadeIn";
 import { MENU_ITEMS } from "../../constants/data.js";
 
 export default function Menu() {
-    const [activeCategory, setActiveCategory] = useState("Starters");
+    const [activeCategory, setActiveCategory] = useState("Sekuwa");
 
     return (
         <div style={{ paddingTop: "100px" }}>

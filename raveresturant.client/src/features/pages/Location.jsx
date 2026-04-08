@@ -21,11 +21,11 @@ export default function Location() {
                 <div style={{ maxWidth: "1100px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 1fr", gap: "80px", alignItems: "start" }}>
                     <FadeIn>
                         {[
-                            ["📍", "Address", "Thamel Marg, Kathmandu 44600, Nepal"],
-                            ["🕐", "Hours", "Tue – Sun: 12:00 PM – 10:30 PM\nMonday: Closed"],
-                            ["📞", "Reservations", "+977 1 4445566"],
-                            ["✉", "Email", "hello@raverestaurant.com"],
-                            ["🚗", "Parking", "Valet available. Public parking 100m away."],
+                            ["📍", "Address", "Gothatar, Kathmandu 44600, Nepal"],
+                            ["🕐", "Hours", "Tue – Sun: 12:00 PM – 10:30 PM"],
+                            ["📞", "Reservations", "+977 9851160143"],
+                            ["✉", "Email", "hello@radsrestaurant.com"],
+                            ["🚗", "Parking", "Available"],
                         ].map(([icon, label, val]) => (
                             <div key={label} style={{ display: "flex", gap: "20px", marginBottom: "36px" }}>
                                 <div style={{ fontSize: "1.2rem", width: "24px", flexShrink: 0 }}>{icon}</div>
@@ -55,8 +55,8 @@ export default function Location() {
                                     <div style={{ position: "absolute", bottom: "-8px", left: "50%", transform: "translateX(-50%)", width: "2px", height: "20px", background: "linear-gradient(to bottom, rgba(201,168,76,0.5), transparent)" }} />
                                 </div>
                                 <div style={{ textAlign: "center", marginTop: "16px" }}>
-                                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "1.1rem", color: "#c9a84c", marginBottom: "6px" }}>Rave Restaurant</div>
-                                    <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.6rem", letterSpacing: "0.2em", color: "#5a4e40", textTransform: "uppercase" }}>Thamel, Kathmandu</div>
+                                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontStyle: "italic", fontSize: "1.1rem", color: "#c9a84c", marginBottom: "6px" }}>Rads Cafe and Family Restaurant</div>
+                                    <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.6rem", letterSpacing: "0.2em", color: "#5a4e40", textTransform: "uppercase" }}>Gothatar, Kathmandu</div>
                                 </div>
                                 {/* Decorative grid */}
                                 {[...Array(6)].map((_, i) => (<div key={`h${i}`} style={{ position: "absolute", left: 0, right: 0, top: `${i * 20}%`, height: "1px", background: "rgba(201,168,76,0.05)" }} />))}
@@ -65,7 +65,7 @@ export default function Location() {
                         </div>
 
                         <a
-                            href="https://maps.google.com?q=Thamel+Kathmandu"
+                            href="https://maps.google.com?q=Rads+Cafe+Gothatar"
                             target="_blank"
                             rel="noreferrer"
                             className="btn-gold"
@@ -84,7 +84,7 @@ export default function Location() {
                         <div className="section-label">The Neighbourhood</div>
                         <div className="divider" style={{ margin: "0 auto 32px" }} />
                         <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: "0.85rem", lineHeight: 1.9, color: "#8a7a68" }}>
-                            Located in the vibrant Thamel district, Rave sits just a short walk from Durbar Square and the historic heart of Kathmandu. After dinner, explore boutique shops, galleries, and rooftop bars — all within easy reach.
+                            Located in the bustling area of Gothatar, Rads sits just a short walk from Airpot Ground and the historic heart of Kathmandu. After dinner, galleries, and  bars — all within easy reach.
                         </p>
                     </FadeIn>
                 </div>

@@ -15,7 +15,7 @@ export default function Gallery() {
                         A feast for the eyes
                     </h1>
                     <p style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 300, fontSize: "0.83rem", color: "#5a4e40", lineHeight: 1.8 }}>
-                        Glimpses of the food, ambience, and moments that define Rave.
+                        Glimpses of the food, ambience, and moments that define Rads.
                     </p>
                 </div>
             </section>

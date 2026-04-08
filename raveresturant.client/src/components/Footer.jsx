@@ -79,9 +79,11 @@ export default function Footer() {
                     marginBottom: "32px",
                 }}
             >
-                {["Instagram", "Facebook", "TripAdvisor"].map((s) => (
+                {[["ig", "Instagram", "www.instagram.com"],
+                    ["fb", "Facebook", "www.fb.com"],
+                    ["tiktok", "Tiktok", "www.tiktok.com"]].map((id, name, url) => (
                     <span
-                        key={s}
+                        key={id}
                         style={{
                             fontFamily: "'Montserrat', sans-serif",
                             fontSize: "0.58rem",
@@ -94,7 +96,7 @@ export default function Footer() {
                         onMouseEnter={(e) => (e.target.style.color = "#c9a84c")}
                         onMouseLeave={(e) => (e.target.style.color = "#5a4e40")}
                     >
-                        {s}
+                            <a href={url}>{id}</a>
                     </span>
                 ))}
             </div>

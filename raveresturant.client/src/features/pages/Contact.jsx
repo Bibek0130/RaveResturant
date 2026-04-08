@@ -39,10 +39,10 @@ export default function Contact() {
                         <div className="section-label">Get in Touch</div>
                         <div className="divider" style={{ marginBottom: "36px" }} />
                         {[
-                            ["📞", "Phone", "+977 1 4445566"],
-                            ["✉", "Email", "hello@raverestaurant.com"],
-                            ["📍", "Address", "Thamel Marg, Kathmandu 44600"],
-                            ["🕐", "Hours", "Tue – Sun: 12:00 PM – 10:30 PM"],
+                            ["📞", "Phone", "+977 9851160143"],
+                            ["✉", "Email", "hello@radsCafe@gmail.com"],
+                            ["📍", "Address", "Gothatar, Kathmandu 44600"],
+                            ["🕐", "Hours", "Sun – Sat: 12:00 PM – 10:30 PM"],
                         ].map(([icon, label, val]) => (
                             <div key={label} style={{ display: "flex", gap: "16px", marginBottom: "28px" }}>
                                 <div style={{ fontSize: "1rem", width: "20px", flexShrink: 0 }}>{icon}</div>

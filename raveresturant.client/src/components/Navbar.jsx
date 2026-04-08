@@ -34,10 +34,10 @@ export default function Navbar() {
             {/* Logo */}
             <div style={{ cursor: "pointer" }} onClick={() => handleNav("/")}>
                 <div style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "1.6rem", letterSpacing: "0.12em", color: "#f0ebe3" }}>
-                    RAVE
+                    RADS
                 </div>
                 <div style={{ fontFamily: "'Montserrat', sans-serif", fontSize: "0.55rem", letterSpacing: "0.4em", color: "#c9a84c", textTransform: "uppercase", marginTop: "-2px" }}>
-                    Restaurant
+                    CAFE
                 </div>
             </div>
 

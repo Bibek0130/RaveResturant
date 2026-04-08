@@ -10,30 +10,42 @@ export const NAV_LINKS = [
 
 export const MENU_ITEMS = [
     {
-        category: "Starters",
+        category: "Salad",
         items: [
-            { name: "Truffle Arancini", desc: "Crispy risotto balls, parmesan foam, black truffle oil", price: "$14" },
-            { name: "Tuna Tartare", desc: "Sesame, avocado crème, wonton crisp, citrus ponzu", price: "$18" },
-            { name: "Burrata & Heritage Tomato", desc: "Aged balsamic, basil oil, fleur de sel", price: "$16" },
-        ],
+            { name: "Green Salad", desc: "A refreshing mix of garden-fresh cucumbers, carrots, onions, and seasonal greens.", price: "Rs130" },
+            { name: "Nepali Salad", desc: "A traditional blend of sliced local vegetables tossed with green chilies, lemon, and a touch of Himalayan spices.", price: "Rs170" },
+            { name: "Mix Fruit Platter(seasonal)", desc: "A vibrant selection of the season's best hand-picked fruits, sliced and served fresh.", price: "Rs190" }
+        ]
     },
     {
-        category: "Mains",
+        category: "Soup",
         items: [
-            { name: "Smoked Duck Breast", desc: "Cherry jus, roasted celeriac, pickled red cabbage", price: "$38" },
-            { name: "Pan-Seared Sea Bass", desc: "Saffron velouté, fennel confit, caperberry gremolata", price: "$42" },
-            { name: "Wagyu Striploin 200g", desc: "Bone marrow butter, truffle fries, shallot purée", price: "$68" },
-            { name: "Wild Mushroom Risotto", desc: "Porcini broth, mascarpone, crispy shallots, aged pecorino", price: "$28" },
-        ],
+            { name: "Veg Mushroom Soup", desc: "A creamy and earthy broth loaded with sautéed button mushrooms and delicate herbs.", price: "Rs170" },
+            { name: "Chicken Mushroom Soup", desc: "Comfort in a bowl featuring tender chicken bits and mushrooms in a savory, velvety broth.", price: "Rs190" },
+            { name: "Thenthuk Soup Veg/Non-Veg", desc: "A hearty Tibetan hand-pulled noodle soup served with fresh vegetables or your choice of meat.", price: "Rs190" },
+            { name: "Chicken Hot and Sour", desc: "A spicy and tangy classic packed with shredded chicken, bamboo shoots, and tofu.", price: "Rs190" },
+        ]
     },
     {
-        category: "Desserts",
+        category: "Sekuwa",
         items: [
-            { name: "Dark Chocolate Délice", desc: "Salted caramel, praline crumble, cocoa tuile", price: "$14" },
-            { name: "Crème Brûlée", desc: "Tahitian vanilla, shortbread, fresh berries", price: "$12" },
-            { name: "Mango Panna Cotta", desc: "Coconut sorbet, passion fruit coulis, lime zest", price: "$13" },
-        ],
+            { name: "Mutton Sekuwa 1Kg", desc: "Succulent cubes of goat meat marinated in traditional spices and charcoal-grilled to smoky perfection.", price: "Rs2125" },
+            { name: "Pork Sekuwa 1Kg", desc: "Juicy pork chunks infused with Himalayan herbs and flame-grilled for an authentic rustic flavor.", price: "Rs1090" },
+            { name: "Chicken Sekuwa 1Kg", desc: "Tender boneless chicken marinated in a secret spice blend and roasted over an open fire.", price: "Rs970" },
+            { name: "Chicken Wings 1kg", desc: "Crispy on the outside, juicy on the inside wings tossed in a savory marinade and grilled.", price: "Rs990" },
+            { name: "Chicken Leg Piece 1Kg", desc: "Plump chicken drumsticks marinated overnight and slow-grilled for maximum tenderness.", price: "Rs990" },
+            { name: "Whole Fish BBQ", desc: "Fresh whole fish marinated in citrus and local spices, charcoal-grilled until flaky and smoky.", price: "Rs1090" },
+        ]
     },
+    {
+        category: "Mo:Mo",
+        items: [
+            { name: "Veg Momo Steam", desc : " veg momo with fresh greens", price : "Rs135" },
+            { name: "Chicken Momo Steam", desc : "spices chicken and lots of love", price : "Rs170" },
+            { name: "Chicken C Momo", desc: "spicy sauce, spices and chichken momo", price : "Rs195" }
+        ]
+    },
+    
 ];
 
 export const GALLERY_ITEMS = [
