@@ -22,7 +22,7 @@ export default function Footer() {
                     marginBottom: "4px",
                 }}
             >
-                RAVE
+                RADS
             </div>
             <div
                 style={{
@@ -34,7 +34,7 @@ export default function Footer() {
                     marginBottom: "32px",
                 }}
             >
-                Restaurant
+                CAFE & RESTAURANT
             </div>
 
             {/* Nav links */}
@@ -110,7 +110,7 @@ export default function Footer() {
                     letterSpacing: "0.08em",
                 }}
             >
-                © {new Date().getFullYear()} Rave Restaurant, Kathmandu. All rights reserved.
+                © {new Date().getFullYear()} Rads Cafe & Restaurant, Gothatar, Kathmandu. All rights reserved.
             </div>
         </footer>
     );
