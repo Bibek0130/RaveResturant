@@ -9,8 +9,7 @@ builder.Services.AddOpenApi();
 var app = builder.Build();
 
 app.UseDefaultFiles();
-//app.MapStaticAssets();
-app.UseStaticFiles(); //for serving static in production
+app.MapStaticAssets();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -24,11 +23,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//app.MapFallbackToFile("/index.html"); //in development
-app.MapFallbackToFile("index.html"); //in production
+app.MapFallbackToFile("/index.html");
 
-//---------------------Render config for port in production---------------------
-var port = Environment.GetEnvironmentVariable("PORT") ?? "5202";
-app.Urls.Add($"http://*:{port}");
-//------------------------------------------------------------------------------
 app.Run();
