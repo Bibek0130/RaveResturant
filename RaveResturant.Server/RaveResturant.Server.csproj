@@ -13,13 +13,7 @@
       <Version>10.*-*</Version>
     </PackageReference>
   </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\raveresturant.client\raveresturant.client.esproj">
-      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
-    </ProjectReference>
-  </ItemGroup>
-
+	
   <ItemGroup>
     <Folder Include="wwwroot\" />
   </ItemGroup>
