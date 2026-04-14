@@ -5,11 +5,13 @@ ENV DOCKER=true
 ENV NODE_ENV=production
 
 WORKDIR /client
+COPY raveresturant.client/package*.json ./
+
+RUN npm install --include=dev
+
 COPY raveresturant.client .
-RUN npm install && npm run build
 
-FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
-
+RUN npm run build
 WORKDIR /app
 COPY . .
 
