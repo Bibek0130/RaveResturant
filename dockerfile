@@ -1,9 +1,12 @@
+ENV DOCKER=true
+ENV NODE_ENV=production
 FROM node:20 AS client-build
 WORKDIR /client
 COPY raveresturant.client .
 RUN npm install && npm run build
 
 FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
+
 WORKDIR /app
 COPY . .
 
