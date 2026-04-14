@@ -1,6 +1,9 @@
+
+FROM node:20 AS client-build
+
 ENV DOCKER=true
 ENV NODE_ENV=production
-FROM node:20 AS client-build
+
 WORKDIR /client
 COPY raveresturant.client .
 RUN npm install && npm run build
