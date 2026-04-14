@@ -7,6 +7,10 @@ import path from 'path';
 import child_process from 'child_process';
 import { env } from 'process';
 
+// find if the process is development or production.
+const isDocker = env.DOCKER === 'true';
+const isDev = env.NODE_ENV === 'development';
+
 const baseFolder =
     env.APPDATA !== undefined && env.APPDATA !== ''
         ? `${env.APPDATA}/ASP.NET/https`
@@ -20,7 +24,9 @@ if (!fs.existsSync(baseFolder)) {
     fs.mkdirSync(baseFolder, { recursive: true });
 }
 
-if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
+//generate an ASP.NET Core HTTPS development certificate if it doesn't already exist. This is required to run the development
+//server over HTTPS, which is required to call the ASP.NET Core backend with secure cookies.
+/*if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
     if (0 !== child_process.spawnSync('dotnet', [
         'dev-certs',
         'https',
@@ -31,6 +37,21 @@ if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
         '--no-password',
     ], { stdio: 'inherit', }).status) {
         throw new Error("Could not create certificate.");
+    }
+}*/
+if (isDev && !isDocker) {
+    if (!fs.existsSync(certFilePath) || !fs.existsSync(keyFilePath)) {
+        if (0 !== child_process.spawnSync('dotnet', [
+            'dev-certs',
+            'https',
+            '--export-path',
+            certFilePath,
+            '--format',
+            'Pem',
+            '--no-password',
+        ], { stdio: 'inherit' }).status) {
+            throw new Error("Could not create certificate.");
+        }
     }
 }
 
@@ -54,9 +75,15 @@ export default defineConfig({
             }
         },
         port: parseInt(env.DEV_SERVER_PORT || '62604'),
-        https: {
+       /* https: {
             key: fs.readFileSync(keyFilePath),
             cert: fs.readFileSync(certFilePath),
-        }
+        }*/
+        https: (isDev && !isDocker)
+            ? {
+                key: fs.readFileSync(keyFilePath),
+                cert: fs.readFileSync(certFilePath),
+            }
+            : false
     }
 })
